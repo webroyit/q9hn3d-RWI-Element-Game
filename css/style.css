@@ -46,3 +46,18 @@ body{
 .header h1{
     margin-bottom: 1rem;
 }
+
+.score{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.score p:first-child{
+    background: #2c5195;
+}
+
+.score p:last-child{
+    background: #be1212;
+}
