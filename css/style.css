@@ -61,3 +61,15 @@ body{
 .score p:last-child{
     background: #be1212;
 }
+
+.choices{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.choice{
+    cursor: pointer;
+    width: 4rem;
+    margin: 1.5rem 0;
+}
