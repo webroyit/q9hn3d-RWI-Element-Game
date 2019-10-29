@@ -73,3 +73,11 @@ body{
     width: 4rem;
     margin: 1.5rem 0;
 }
+
+.text-win{
+    color: #13b30d;
+}
+
+.text-lose{
+    color: #ee0c32;
+}
