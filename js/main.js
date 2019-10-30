@@ -92,7 +92,7 @@ function showWinner(winner, cpuChoice){
         `;
     }
 
-    // update the score
+    // update the score in the html page
     score.innerHTML = `
         <p>Player: ${scoreBoard.player}</p>
         <p>CPU: ${scoreBoard.cpu}</p>
@@ -109,8 +109,26 @@ function closeModal(e){
     }
 }
 
+// reset the score board
+function restartGame(){
+    scoreBoard.player = 0;
+    scoreBoard.cpu = 0;
+
+    // reset the score in the html page
+    score.innerHTML = `
+        <p>Player: 0</p>
+        <p>CPU: 0</p>
+    `;
+
+    // hide the restart button
+    restart.style.display = "none";
+}
+
 // add event listeners to all choices
 choices.forEach(choice => choice.addEventListener('click', play));
 
 // add event listeners when clicking outside of the modal area
 window.addEventListener('click', closeModal);
+
+// add event listeners tp the restart button
+restart.addEventListener('click', restartGame);
