@@ -75,6 +75,11 @@ body{
     margin: 1.5rem 0;
 }
 
+.icon{
+    width: 4rem;
+    margin: 1rem 0;
+}
+
 .text-win{
     color: #13b30d;
 }

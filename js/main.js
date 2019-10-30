@@ -74,6 +74,7 @@ function showWinner(winner, cpuChoice){
         result.innerHTML = `
             <h1 class="text-win">You Win</h1>
             <p>CPU chose ${cpuChoice}</p>
+            <img class="icon" src="img/${cpuChoice}.png" alt="${cpuChoice}">
         `;
     }
     else if(winner === 'cpu'){
@@ -83,6 +84,7 @@ function showWinner(winner, cpuChoice){
         result.innerHTML = `
             <h1 class="text-lose">You Lose</h1>
             <p>CPU chose ${cpuChoice}</p>
+            <img class="icon" src="img/${cpuChoice}.png" alt="${cpuChoice}">
         `;
     }
     else{
@@ -90,6 +92,7 @@ function showWinner(winner, cpuChoice){
         result.innerHTML = `
             <h1>It a Draw</h1>
             <p>CPU chose ${cpuChoice}</p>
+            <img class="icon" src="img/${cpuChoice}.png" alt="${cpuChoice}">
         `;
     }
 
