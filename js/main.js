@@ -2,7 +2,7 @@ const choices = document.querySelectorAll('.choice');
 const score =  document.getElementById('score');
 const result = document.getElementById('result');
 const restart = document.getElementById('restart');
-const modal = document.getElementById('modal');
+const modal = document.querySelector('.modal');
 
 const scoreBoard = {
     player: 0,
@@ -17,7 +17,7 @@ function play(e){
     const cpuChoice = getCPUChoice();
     const winner = getWinner(playerchoice, cpuChoice);
 
-    console.log(playerchoice, cpuChoice, winner);
+    showWinner(winner, cpuChoice);
 }
 
 // use random method to get CPU choice
@@ -63,6 +63,43 @@ function getWinner(playerchoice, cpuChoice){
             return "player";
         }
     }
+}
+
+function showWinner(winner, cpuChoice){
+    if(winner === 'player'){
+        scoreBoard.player++;
+
+        // show modal
+        result.innerHTML = `
+            <h1 class="text-win">You Win</h1>
+            <p>CPU chose ${cpuChoice}</p>
+        `;
+    }
+    else if(winner === 'cpu'){
+        scoreBoard.cpu++;
+
+        // show modal
+        result.innerHTML = `
+            <h1 class="text-lose">You Lose</h1>
+            <p>CPU chose ${cpuChoice}</p>
+        `;
+    }
+    else{
+        // show modal
+        result.innerHTML = `
+            <h1>It a Draw</h1>
+            <p>CPU chose ${cpuChoice}</p>
+        `;
+    }
+
+    // update the score
+    score.innerHTML = `
+        <p>Player: ${scoreBoard.player}</p>
+        <p>CPU: ${scoreBoard.cpu}</p>
+    `;
+
+    // show the modal
+    modal.style.display = 'block';
 }
 
 // add event listeners to all choices
