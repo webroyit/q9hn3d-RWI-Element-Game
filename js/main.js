@@ -10,7 +10,27 @@ const scoreBoard = {
 }
 
 function play(e){
-    console.log(e.target.id);
+    // show the restart button
+    restart.style.display = "inline-block";
+    
+    const playerchoice = e.target.id;
+    const cpuChoice = getCPUChoice();
+
+    console.log(playerchoice, cpuChoice);
+}
+
+// use random method to get CPU choice
+function getCPUChoice(){
+    const random = Math.random();
+    if(random < 0.34){
+        return "fire";
+    };
+    
+    if(random <= 0.67){
+        return "water";
+    };
+
+    return "grass";
 }
 
 // add event listeners to all choices
