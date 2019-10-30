@@ -2,6 +2,7 @@ const choices = document.querySelectorAll('.choice');
 const score =  document.getElementById('score');
 const result = document.getElementById('result');
 const restart = document.getElementById('restart');
+const closeButton = document.getElementById('closeButton');
 const modal = document.querySelector('.modal');
 
 const scoreBoard = {
@@ -104,9 +105,14 @@ function showWinner(winner, cpuChoice){
 
 // close the modal
 function closeModal(e){
+    // excute only if they click on the modal background or the close buttom
     if(e.target === modal){
         modal.style.display = 'none';
     }
+}
+
+function closeModalButton(){
+    modal.style.display = 'none';
 }
 
 // reset the score board
@@ -127,8 +133,11 @@ function restartGame(){
 // add event listeners to all choices
 choices.forEach(choice => choice.addEventListener('click', play));
 
+// add event listeners to the close button for modal
+closeButton.addEventListener('click', closeModalButton);
+
 // add event listeners when clicking outside of the modal area
 window.addEventListener('click', closeModal);
 
-// add event listeners tp the restart button
+// add event listeners to the restart button
 restart.addEventListener('click', restartGame);
