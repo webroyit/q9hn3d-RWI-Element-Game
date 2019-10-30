@@ -102,5 +102,15 @@ function showWinner(winner, cpuChoice){
     modal.style.display = 'block';
 }
 
+// close the modal
+function closeModal(e){
+    if(e.target === modal){
+        modal.style.display = 'none';
+    }
+}
+
 // add event listeners to all choices
 choices.forEach(choice => choice.addEventListener('click', play));
+
+// add event listeners when clicking outside of the modal area
+window.addEventListener('click', closeModal);
