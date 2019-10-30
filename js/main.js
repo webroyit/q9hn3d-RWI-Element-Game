@@ -15,8 +15,9 @@ function play(e){
     
     const playerchoice = e.target.id;
     const cpuChoice = getCPUChoice();
+    const winner = getWinner(playerchoice, cpuChoice);
 
-    console.log(playerchoice, cpuChoice);
+    console.log(playerchoice, cpuChoice, winner);
 }
 
 // use random method to get CPU choice
@@ -31,6 +32,37 @@ function getCPUChoice(){
     };
 
     return "grass";
+}
+
+// find the winner
+function getWinner(playerchoice, cpuChoice){
+    if(playerchoice === cpuChoice){
+        return "draw";
+    }
+    if(playerchoice === "fire"){
+        if(cpuChoice === "water"){
+            return "cpu";
+        }
+        else{
+            return "player";
+        }
+    }
+    if(playerchoice === "water"){
+        if(cpuChoice === "grass"){
+            return "cpu";
+        }
+        else{
+            return "player";
+        }
+    }
+    if(playerchoice === "grass"){
+        if(cpuChoice === "fire"){
+            return "cpu";
+        }
+        else{
+            return "player";
+        }
+    }
 }
 
 // add event listeners to all choices
