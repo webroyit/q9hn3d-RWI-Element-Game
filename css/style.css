@@ -48,6 +48,13 @@ body{
     margin-bottom: 1rem;
 }
 
+.infor{
+    background-color: #beaeae;
+    width: 350px;
+    margin: 1.5rem auto;
+    padding: 1rem 0;
+}
+
 .score{
     display: grid;
     grid-template-columns: 1fr 1fr;
