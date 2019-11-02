@@ -58,6 +58,16 @@ function setBgGreet(){
     }
 }
 
+function getName(){
+    if(localStorage.getItem('player-name') === null){
+        playerName.textContent = 'Player1';
+    }
+    else{
+        playerName.textContent = localStorage.getItem('player-name');
+    }
+}
+
 // run the function
 showTime();
 setBgGreet();
+getName()
