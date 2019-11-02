@@ -2,6 +2,11 @@
     font-size: 3rem;
 }
 
+#player-name{
+    background-color: #fdfdf1;
+    padding: 0 .5rem;
+}
+
 .time-area h2{
     font-size: 2rem;
     margin-bottom: 1rem;
