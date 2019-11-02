@@ -1,0 +1,18 @@
+#time{
+    font-size: 3rem;
+}
+
+.time-area h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+@media(max-width: 700px){
+    #time{
+        font-size: 2rem;
+    }
+
+    .time-area h2{
+        font-size: 1.4rem;
+    }
+}
