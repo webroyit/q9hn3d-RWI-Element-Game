@@ -10,7 +10,8 @@ body{
     font-family: 'Fira Code', monospace;
     line-height: 1.6;
     background: #dfdbdb;
-    color: #463e3e
+    color: #463e3e;
+    min-height: 100vh;
 }
 
 .container{
