@@ -58,6 +58,7 @@ function setBgGreet(){
     }
 }
 
+// get player name from local storage
 function getName(){
     if(localStorage.getItem('player-name') === null){
         playerName.textContent = 'Player1';
@@ -66,6 +67,25 @@ function getName(){
         playerName.textContent = localStorage.getItem('player-name');
     }
 }
+
+// save the player name in the local storage
+function setName(e){
+    if(e.type === 'keypress'){
+        // save the data when they press enter
+        if(e.which == 13 || e.keyCode == 13){
+            localStorage.setItem('player-name', e.target.innerText);
+
+            // prevent the text from going to the next line when pressing enter
+            playerName.blur();
+        }
+    }
+    else{
+        localStorage.setItem('player-name', e.target.innerText);
+    }
+}
+
+playerName.addEventListener('keypress', setName);
+playerName.addEventListener('blur', setName);
 
 // run the function
 showTime();
